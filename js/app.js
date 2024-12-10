@@ -7,13 +7,15 @@ function adicionar() {
         return;
     }
 
-    if (listaCompleta.includes(nomeAmigo.value)) {
+    let nomeMaiusculo = nomeAmigo.value.toUpperCase();
+
+    if (listaCompleta.includes(nomeMaiusculo)) {
         alert("Name already added!");
         return;
     }
 
     let listaDeAmigos = document.getElementById("lista-amigos");
-    listaCompleta.push(nomeAmigo.value);
+    listaCompleta.push(nomeMaiusculo);
 
 
     if(listaDeAmigos.textContent == ""){
@@ -35,6 +37,7 @@ function sortear() {
 
     embaralhar(listaCompleta);
     let listaSorteio = document.getElementById("lista-sorteio");
+    listaSorteio.innerHTML = "";
 
     for(let i = 0; i < listaCompleta.length; i++){
 
